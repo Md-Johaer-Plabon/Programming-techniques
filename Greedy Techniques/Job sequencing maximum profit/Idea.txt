@@ -21,28 +21,6 @@ but the profit with this schedule is 20+50+100 which is less than 250.
 
 Approach : 
 
-  1) First sort jobs according to finish time.
-  2) Now apply following recursive process. 
-   // Here arr[] is array of n jobs
-   findMaximumProfit(arr[], n)
-   {
-     a) if (n == 1) return arr[0];
-     b) Return the maximum of following two profits.
-         (i) Maximum profit by excluding current job, i.e., 
-             findMaximumProfit(arr, n-1)
-         (ii) Maximum profit by including the current job            
-   }
-
-How to find the profit including current job?
-Ans: The idea is to find the latest job before the current job (in 
-sorted array) that doesn't conflict with current job 'arr[n-1]'. 
-Once we find such a job, we recur for all jobs till that job and
-add profit of current job to result.
-In the above example, "job 1" is the latest non-conflicting
-for "job 4" and "job 2" is the latest non-conflicting for "job 3".
-
-The time complexity of solution is O(n Log n).
-
 The algorithm is:
 
     1.Sort the jobs by non-decreasing finish times.
@@ -52,3 +30,4 @@ The algorithm is:
 To find the profit with inclusion of job[i]. we need to find the latest job that doesn’t conflict with job[i]. 
 The idea is to use Binary Search to find the latest non-conflicting job. 
 
+The time complexity of solution is O(n Log n).
