@@ -74,9 +74,9 @@ The Time Complexity of the above solution is O(n2). It can be optimized using Pr
 
 The algorithm goes as follow:
 
-    Sort the jobs based on their deadlines.
-    Iterate from the end and calculate the available slots between every two consecutive deadlines.
-    Include the profit, deadline, and job ID of ith job in the max heap.
-    While the slots are available and there are jobs left in the max heap, include the job ID with maximum profit and deadline in the result.
-    Sort the result array based on their deadlines.
+    1.Sort the jobs based on their deadlines.
+    2.Iterate from the end and calculate the available slots between every two consecutive deadlines.
+    3.Include the profit, deadline, and job ID of ith job in the max heap.
+    4.While the slots are available and there are jobs left in the max heap, include the job ID with maximum profit and deadline in the result.
+    5.Sort the result array based on their deadlines.
 */ 
