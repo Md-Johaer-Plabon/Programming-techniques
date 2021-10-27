@@ -1,0 +1,22 @@
+We are given a sequence of N goods of production numbered from 1 to N. Each good has a volume denoted by (Vi). The constraint is that once a good has been completed its volume starts decaying at a fixed percentage (P) per day.
+All goods decay at the same rate and further each good take one day to complete. 
+We are required to find the order in which the goods should be produced so that the overall volume of goods is maximized.
+Example-1: 
+
+Input: 4, 2, 151, 15, 1, 52, 12 and P = 10%
+Output: 222.503
+
+Solution: In the optimum sequence of jobs, the total volume of goods left at the end of all jobs is 222.503 
+
+Input: 3, 1, 41, 52, 15, 4, 1, 63, 12 and P = 20%
+Output: 145.742
+
+Solution: In the optimum sequence of jobs the total volume of goods left at the end of all jobs is 145.72 
+
+Approach: 
+   1.Sort the goods in increasing order accordance to amount. 
+   2.Amount of remaining goods after producing all goods = pi(1-r)^timei [i=(1...n) , time = remaining day after producing; timei = (n-1...0)]; where p = amount of good ; r = loss in percentage per day ; n = Number of goods. 
+   3.SUm of all remaining goods is the desired output. 
+   
+ Complexity – 
+ time complexity is O( N * log(N) ).
