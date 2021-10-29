@@ -1,0 +1,37 @@
+Given an array of size n that has the following specifications: 
+
+    Each element in the array contains either a policeman or a thief.
+    Each policeman can catch only one thief.
+    A policeman cannot catch a thief who is more than K units away from the policeman.
+
+We need to find the maximum number of thieves that can be caught.
+Examples: 
+    Input : arr[] = {'P', 'T', 'T', 'P', 'T'},
+            k = 1.
+Output : 2.
+Here maximum 2 thieves can be caught, first
+policeman catches first thief and second police-
+man can catch either second or third thief.
+
+Input : arr[] = {'T', 'T', 'P', 'P', 'T', 'P'}, 
+            k = 2.
+Output : 3.
+
+Input : arr[] = {'P', 'T', 'P', 'T', 'T', 'P'},
+            k = 3.
+Output : 3.
+
+Approach:
+
+This approach takes the following steps:
+
+    1.First find the left most police and thief and store the indices. There can be two cases:
+    2.CASE 1: If the distance between the police and thief <= k (given), the thief can be caught, so increment the res counter
+    3.CASE 2: If the distance between the police and thief >= k, the current thief cannot be caught by the current police
+        (i) For CASE 2, if the police is behind the thief, we need to find the next police and check if it can catch the current thief
+       (ii) If the thief is behind the police, we need to find the next thief and check if the current police can catch the thief
+    6.Repeat the process until we find the next police and thief pair, and increment result counter if conditions are met, i,e, CASE 1.
+
+Time Complexity: O(N) 
+Auxiliary Space: O(N)
+
